@@ -1,0 +1,32 @@
+{
+    "grid_size": [20, 20],
+    "robot_position": [10.0, 10.0],
+    "sensor_range": 5.0,
+    "resolution": 0.1,
+    "num_obstacles": 8,
+    "seed": 42,
+    "output_dir": "output",
+    "planning": {
+        "max_iterations": 1000,
+        "step_size": 0.5,
+        "goal_tolerance": 0.3,
+        "collision_margin": 0.2
+    },
+    "control": {
+        "max_velocity": 1.0,
+        "max_angular_velocity": 1.0,
+        "position_tolerance": 0.2,
+        "orientation_tolerance": 0.1,
+        "emergency_stop_distance": 0.5,
+        "min_safe_distance": 0.3
+    },
+    "evaluation": {
+        "distance_threshold": 0.5,
+        "num_test_configurations": 4
+    },
+    "visualization": {
+        "figure_size": [15, 12],
+        "dpi": 300,
+        "animation_fps": 10
+    }
+}

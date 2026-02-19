@@ -1,0 +1,151 @@
+# Robot Perception System Requirements
+
+## Core Dependencies
+
+### Scientific Computing
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.5.0
+
+### Computer Vision
+opencv-python>=4.5.0
+opencv-contrib-python>=4.5.0
+
+### 3D Processing
+open3d>=0.15.0
+
+### Data Handling
+pandas>=1.3.0
+h5py>=3.1.0
+
+### Configuration Management
+pyyaml>=6.0
+omegaconf>=2.1.0
+
+### Logging and Monitoring
+tensorboard>=2.8.0
+wandb>=0.12.0
+
+### Development Tools
+black>=22.0.0
+ruff>=0.1.0
+pytest>=7.0.0
+pytest-cov>=3.0.0
+
+### Optional Dependencies
+
+#### ROS 2 Integration (Optional)
+rclpy>=3.0.0
+tf2-py>=0.25.0
+ros2-control>=2.0.0
+
+#### Advanced Simulation (Optional)
+gymnasium>=0.28.0
+mujoco>=2.3.0
+pybullet>=3.2.0
+
+#### Machine Learning (Optional)
+torch>=2.0.0
+torchvision>=0.15.0
+stable-baselines3>=2.0.0
+
+#### Web Interface (Optional)
+streamlit>=1.25.0
+gradio>=3.40.0
+fastapi>=0.100.0
+uvicorn>=0.22.0
+
+## Development Dependencies
+
+### Code Quality
+pre-commit>=3.0.0
+mypy>=1.0.0
+isort>=5.10.0
+
+### Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+
+### Testing
+pytest-xdist>=3.0.0
+pytest-mock>=3.8.0
+coverage>=7.0.0
+
+## System Requirements
+
+### Python Version
+Python>=3.10
+
+### Operating System
+- Linux (Ubuntu 20.04+ recommended)
+- macOS (10.15+)
+- Windows (10+)
+
+### Hardware Requirements
+- RAM: 8GB minimum, 16GB recommended
+- Storage: 2GB for installation, additional space for data
+- GPU: Optional, CUDA-compatible for acceleration
+
+## Installation Notes
+
+### CUDA Support (Optional)
+For GPU acceleration, install PyTorch with CUDA support:
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+```
+
+### Apple Silicon Support
+For Apple Silicon Macs, use MPS backend:
+```bash
+pip install torch torchvision
+```
+
+### ROS 2 Integration (Optional)
+If using ROS 2 integration, install ROS 2 Humble or later:
+```bash
+# Ubuntu
+sudo apt install ros-humble-desktop
+pip install rclpy
+```
+
+## Version Compatibility
+
+This system has been tested with:
+- Python 3.10, 3.11, 3.12
+- NumPy 1.21-1.26
+- OpenCV 4.5-4.8
+- Open3D 0.15-0.18
+- PyTorch 2.0-2.1
+
+## Troubleshooting
+
+### Common Issues
+
+1. **OpenCV Installation**: If opencv-python fails, try:
+   ```bash
+   pip install opencv-python-headless
+   ```
+
+2. **Open3D Installation**: On some systems, you may need:
+   ```bash
+   pip install open3d --no-cache-dir
+   ```
+
+3. **Matplotlib Backend**: For headless systems:
+   ```bash
+   export MPLBACKEND=Agg
+   ```
+
+### Platform-Specific Notes
+
+#### Windows
+- Use Visual Studio Build Tools for compilation
+- Consider using conda for easier dependency management
+
+#### macOS
+- May need to install Xcode command line tools
+- Use Homebrew for system dependencies
+
+#### Linux
+- Install development headers: `sudo apt install python3-dev`
+- For OpenCV: `sudo apt install libopencv-dev`
